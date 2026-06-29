@@ -12,8 +12,12 @@ app.get("/",(req,res)=>{
 
 app.use("/student",newStudentRouter )
 
-app.listen(port,()=>{
+connection.sync({force : true}).then(()=>{
+   app.listen(port,()=>{
     console.log("server connected")
 })
+}).catch((error=>{
+  console.log(error)
+}))
 
 
