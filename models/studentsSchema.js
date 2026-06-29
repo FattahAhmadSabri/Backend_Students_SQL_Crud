@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 
 const sequelize = require("../utils/dbConfig");
 
-const Students = sequelize.define("Students", {
+const Student = sequelize.define("Students", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -17,6 +17,10 @@ const Students = sequelize.define("Students", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  age: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
 
-module.exports = Students;
+module.exports = Student;
